@@ -1,0 +1,12 @@
+{
+	"Dialogue1": {
+		"Name1:": [
+			" This is test dialouge!",
+			" This is another line 
+			in test dialouge!"
+		],
+		"Name2:":[
+			"This is name 2, testing the dialogue"
+		]
+	}
+}
