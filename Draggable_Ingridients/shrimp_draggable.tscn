@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnnn064y6e8q2"]
+
+[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_m0811"]
+[ext_resource type="Script" uid="uid://26tbdp2ta5fm" path="res://Scripts/shrimp_draggable.gd" id="2_m0811"]
+
+[node name="shrimp_draggable" groups=["Shrimp", "Toppings"] instance=ExtResource("1_m0811")]
+script = ExtResource("2_m0811")

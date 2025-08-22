@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwske0l5ryebf"]
+
+[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_2rkjv"]
+[ext_resource type="Script" uid="uid://duq5qmu25qsi0" path="res://Scripts/mushroom_draggable.gd" id="2_iv1g4"]
+
+[node name="mushroom_draggable" groups=["Mushroom", "Toppings"] instance=ExtResource("1_2rkjv")]
+script = ExtResource("2_iv1g4")
