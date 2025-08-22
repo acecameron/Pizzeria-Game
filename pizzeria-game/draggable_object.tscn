@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2nxy2b5q3e3w"]
+
+[ext_resource type="Script" uid="uid://dc25mwwdt7l6m" path="res://Scripts/draggable_object.gd" id="1_88eo7"]
+[ext_resource type="Texture2D" uid="uid://dluvl5385pqk" path="res://sprites/spr_flour_bag/ad64ee19-6684-4939-aa7c-e72c32022278.png" id="2_2ocf8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d30c8"]
+radius = 7.07107
+
+[node name="DraggableObject" type="Area2D"]
+script = ExtResource("1_88eo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d30c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2ocf8")

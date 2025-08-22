@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4c0wceppyhgl"]
+
+[ext_resource type="PackedScene" uid="uid://dsr82ux51y46k" path="res://Topping_Containers/toping_container.tscn" id="1_ci1uh"]
+[ext_resource type="Script" uid="uid://cmdaxu2ij0uwx" path="res://Scripts/mushroom_container.gd" id="2_2ofvf"]
+
+[node name="Mushroom_Container" instance=ExtResource("1_ci1uh")]
+script = ExtResource("2_2ofvf")

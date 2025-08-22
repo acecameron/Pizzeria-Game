@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctnihhjlyek1d"]
+
+[ext_resource type="Texture2D" uid="uid://bcmnnqriahxw4" path="res://sprites/Carrible_Objects/Pizzas/Basic_Pizza.png" id="1_frwax"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_801sw"]
+radius = 5.0
+
+[node name="CarriableObject" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_frwax")
+
+[node name="CarriableObjectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarriableObjectArea"]
+shape = SubResource("CircleShape2D_801sw")

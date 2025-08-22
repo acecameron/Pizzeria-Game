@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=3 uid="uid://cfqblaveghay7"]
+
+[ext_resource type="Script" uid="uid://bpy0s78oii6r7" path="res://Scripts/room.gd" id="1_v7lnt"]
+[ext_resource type="Texture2D" uid="uid://d14g33idirk63" path="res://sprites/spr_hall_wall/eb028be9-b3af-48e4-a696-81cbca75523a.png" id="2_8cv3p"]
+[ext_resource type="PackedScene" uid="uid://bo1hv4nuatb7i" path="res://pizza_minigame_start.tscn" id="2_42v8c"]
+[ext_resource type="Script" uid="uid://b2bhs45urnni6" path="res://Scripts/canvas_layer.gd" id="2_kbdc6"]
+[ext_resource type="PackedScene" uid="uid://bkuhbqwbydkmr" path="res://cash_register.tscn" id="2_yki1y"]
+[ext_resource type="Texture2D" uid="uid://quvuuy55f5i3" path="res://sprites/spr_kitchen_wall/43210003-17cf-42ce-a80f-70f7e0ca10c2.png" id="3_01y1d"]
+[ext_resource type="PackedScene" uid="uid://dedfwk0v6erjd" path="res://ui.tscn" id="3_grtrj"]
+[ext_resource type="PackedScene" uid="uid://75svf2atdsaa" path="res://main_character.tscn" id="3_u0s0k"]
+[ext_resource type="Texture2D" uid="uid://bjqyfuee0uwea" path="res://sprites/spr_background/spr_background.png" id="5_xorjj"]
+[ext_resource type="PackedScene" uid="uid://d7wy7crfyakd" path="res://player_stats_ui.tscn" id="5_xwbdb"]
+[ext_resource type="PackedScene" uid="uid://cs5dnvw7bo8jf" path="res://pizza_making_scene.tscn" id="6_mb7s7"]
+[ext_resource type="Script" uid="uid://b0m1lrc2p5pck" path="res://Scripts/queue_manager.gd" id="16_v7lnt"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mb7s7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwbdb"]
+texture = ExtResource("5_xorjj")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xorjj"]
+sources/1 = SubResource("TileSetAtlasSource_xwbdb")
+sources/0 = SubResource("TileSetScenesCollectionSource_mb7s7")
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_v7lnt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1733.0
+offset_bottom = 782.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+script = ExtResource("2_kbdc6")
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="UI_time" parent="CanvasLayer/Control2" instance=ExtResource("3_grtrj")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player_stats_ui" parent="CanvasLayer/Control" instance=ExtResource("5_xwbdb")]
+layout_mode = 1
+
+[node name="pizza_making_scene" parent="CanvasLayer" instance=ExtResource("6_mb7s7")]
+visible = false
+position = Vector2(574, 300)
+
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Backgrounds"]
+tile_set = SubResource("TileSet_xorjj")
+format = 2
+
+[node name="Background" type="Sprite2D" parent="Backgrounds"]
+texture_filter = 1
+position = Vector2(531, 488)
+scale = Vector2(6, 6)
+texture = ExtResource("2_8cv3p")
+
+[node name="Kitchen" type="Sprite2D" parent="Backgrounds"]
+texture_filter = 1
+position = Vector2(1397, 488)
+scale = Vector2(6, 6)
+texture = ExtResource("3_01y1d")
+
+[node name="MainCharacter" parent="." instance=ExtResource("3_u0s0k")]
+position = Vector2(347, 570)
+scale = Vector2(6, 6)
+
+[node name="Camera2D" type="Camera2D" parent="MainCharacter"]
+position = Vector2(0.5, -19)
+scale = Vector2(6, 6)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(110, 569)
+scale = Vector2(6, 6)
+
+[node name="GoHere" type="Marker2D" parent="."]
+position = Vector2(729, 588)
+scale = Vector2(6, 6)
+
+[node name="CashRegister" parent="." instance=ExtResource("2_yki1y")]
+position = Vector2(662, 552)
+scale = Vector2(3, 3)
+
+[node name="QueueManager" type="Node" parent="."]
+script = ExtResource("16_v7lnt")
+
+[node name="pizza_minigame_start" parent="." instance=ExtResource("2_42v8c")]
+position = Vector2(1277, 593)
+
+[connection signal="back_to_main" from="CanvasLayer/pizza_making_scene" to="." method="_on_pizza_making_scene_back_to_main"]
+[connection signal="initiate_order" from="CashRegister" to="." method="_on_cash_register_initiate_order"]
+[connection signal="change_to_minigame" from="pizza_minigame_start" to="." method="_on_pizza_minigame_start_change_to_minigame"]

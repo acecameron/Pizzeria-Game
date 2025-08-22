@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=3 uid="uid://cs5dnvw7bo8jf"]
+
+[ext_resource type="Script" uid="uid://ca7qrw1blkvcx" path="res://Scripts/pizza_making_scene.gd" id="1_415p7"]
+[ext_resource type="PackedScene" uid="uid://bfi55d4ea7ibi" path="res://pizza_area.tscn" id="2_sklc5"]
+[ext_resource type="PackedScene" uid="uid://ba7quauhhvmu8" path="res://Topping_Containers/pepperoni_container.tscn" id="2_ujscy"]
+[ext_resource type="PackedScene" uid="uid://b3s3rmn8tt7xq" path="res://Topping_Containers/mincemeat_container.tscn" id="3_8ovqq"]
+[ext_resource type="PackedScene" uid="uid://bgek37tya7vfq" path="res://Topping_Containers/cheese_container.tscn" id="5_td57m"]
+[ext_resource type="PackedScene" uid="uid://wctyxtbme2fn" path="res://Topping_Containers/bacon_container.tscn" id="6_8vmfh"]
+[ext_resource type="PackedScene" uid="uid://b4c0wceppyhgl" path="res://Topping_Containers/mushroom_container.tscn" id="7_lov6j"]
+[ext_resource type="PackedScene" uid="uid://bdmv2y8brm10j" path="res://Topping_Containers/pineapple_container.tscn" id="8_1w23y"]
+[ext_resource type="PackedScene" uid="uid://dvmwrx38bq7s4" path="res://Topping_Containers/red_sauce_container.tscn" id="9_voyf1"]
+[ext_resource type="PackedScene" uid="uid://b2d6eo6ug2r07" path="res://Topping_Containers/shrimp_container.tscn" id="10_td57m"]
+[ext_resource type="PackedScene" uid="uid://nxycwusow5pi" path="res://Topping_Containers/tomato_container.tscn" id="11_8vmfh"]
+[ext_resource type="PackedScene" uid="uid://cte21vwisf844" path="res://Topping_Containers/white_sauce_container.tscn" id="12_8vmfh"]
+
+[node name="pizza_making_scene" type="Node2D"]
+script = ExtResource("1_415p7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -614.0
+offset_top = -315.0
+offset_right = 607.0
+offset_bottom = 381.0
+scale = Vector2(0.998401, 0.970684)
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+color = Color(0.528606, 0.318661, 0.062408, 1)
+
+[node name="CanvasLayer" type="Control" parent="."]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = 192.0
+offset_right = 146.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="New_Pizza_Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "NEW PIZZA"
+metadata/_edit_use_anchors_ = true
+
+[node name="Finish_Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "FINISH"
+
+[node name="Back_Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "BACK TO KITCHEN
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="PizzaArea" parent="." instance=ExtResource("2_sklc5")]
+
+[node name="pepperoni_container" parent="." instance=ExtResource("2_ujscy")]
+position = Vector2(-374, -94)
+
+[node name="mincemeat_container" parent="." instance=ExtResource("3_8ovqq")]
+position = Vector2(-464, 48)
+
+[node name="cheese_container" parent="." instance=ExtResource("5_td57m")]
+position = Vector2(-284, 198)
+
+[node name="bacon_container" parent="." instance=ExtResource("6_8vmfh")]
+position = Vector2(-464, 198)
+
+[node name="mushroom_container" parent="." instance=ExtResource("7_lov6j")]
+position = Vector2(-284, 48)
+
+[node name="pineapple_container" parent="." instance=ExtResource("8_1w23y")]
+position = Vector2(366, -101)
+
+[node name="red_sauce_container" parent="." instance=ExtResource("9_voyf1")]
+position = Vector2(466, 48)
+
+[node name="shrimp_container" parent="." instance=ExtResource("10_td57m")]
+position = Vector2(286, 48)
+
+[node name="tomato_container" parent="." instance=ExtResource("11_8vmfh")]
+position = Vector2(466, 198)
+
+[node name="white_sauce_container" parent="." instance=ExtResource("12_8vmfh")]
+position = Vector2(286, 198)
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/New_Pizza_Button" to="PizzaArea" method="_on_new_pizza_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Back_Button" to="." method="_on_back_button_pressed"]

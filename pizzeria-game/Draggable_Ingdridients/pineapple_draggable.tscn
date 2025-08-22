@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xhf8s3l4d67"]
+
+[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_0ptx1"]
+[ext_resource type="Script" uid="uid://758x4xvys6t4" path="res://Scripts/pineapple_draggable.gd" id="2_0ptx1"]
+
+[node name="pineapple_draggable" groups=["Pineapple", "Toppings"] instance=ExtResource("1_0ptx1")]
+script = ExtResource("2_0ptx1")

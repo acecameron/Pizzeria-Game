@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c51tujtv3bmet"]
+
+[ext_resource type="PackedScene" uid="uid://6a6bqyasdpdh" path="res://npc.tscn" id="1_alqs7"]
+[ext_resource type="Script" uid="uid://b8t8l6oa7xjg3" path="res://Scripts/customer.gd" id="2_r8ta2"]
+
+[node name="Customer" instance=ExtResource("1_alqs7")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_r8ta2")
+
+[node name="CollisionShape2D" parent="." index="0" groups=["Customer"]]
+
+[node name="Area2D" parent="." index="2" groups=["Customer"]]
+
+[node name="NPCDetectionBox" parent="Area2D" index="0" groups=["Customer"]]
+
+[node name="TimerWaitForCashier" type="Timer" parent="." index="3"]
+wait_time = 5.0
+
+[node name="TimerWairForOrder" type="Timer" parent="." index="4"]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="TimerWaitForCashier" to="." method="_on_timer_wait_for_cashier_timeout"]

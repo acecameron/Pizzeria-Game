@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://chjxm73j6ssea"]
+
+[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_vj7df"]
+[ext_resource type="Script" uid="uid://i5e7xos2c2r1" path="res://Scripts/white_sauce_draggable.gd" id="2_vj7df"]
+
+[node name="white_sauce_draggable" groups=["Sauce White", "Toppings"] instance=ExtResource("1_vj7df")]
+script = ExtResource("2_vj7df")

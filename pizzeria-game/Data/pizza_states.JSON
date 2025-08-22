@@ -1,0 +1,11 @@
+{
+  "Dough": {
+	"possible_toppings": ["Sauce"]
+  },
+  "Pizza W Sauce": {
+	"possible_toppings": ["Cheese"]
+  },
+  "Basic Pizza": {
+	"possible_toppings": ["Olives", "Mushrooms", "Corn"]
+  }
+}

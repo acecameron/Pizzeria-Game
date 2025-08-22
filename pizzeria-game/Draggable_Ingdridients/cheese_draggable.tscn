@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwwam6ufa6x5s"]
+
+[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_lfak3"]
+[ext_resource type="Script" uid="uid://jpwodskmxl8f" path="res://Scripts/cheese_draggable.gd" id="2_vhmfo"]
+
+[node name="cheese_draggable" groups=["Cheese", "Toppings"] instance=ExtResource("1_lfak3")]
+script = ExtResource("2_vhmfo")
