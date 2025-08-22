@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mrmbbxb7ge27"]
+
+[ext_resource type="Script" uid="uid://cdeq7pwjig3iu" path="res://topping_sprite.gd" id="1_m0wit"]
+
+[node name="Topping_Sprite" type="Sprite2D"]
+script = ExtResource("1_m0wit")

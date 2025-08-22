@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkuhbqwbydkmr"]
+
+[ext_resource type="Texture2D" uid="uid://bjc6sm2e3maxd" path="res://sprites/Placeholder/Placeholder.png" id="1_gjbes"]
+[ext_resource type="Script" uid="uid://drhxcq71isoic" path="res://Scripts/cash_register.gd" id="1_kus1m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s3ug"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5pmn"]
+radius = 22.0907
+
+[node name="CashRegister" type="Node2D" groups=["CashRegister"]]
+script = ExtResource("1_kus1m")
+
+[node name="OrderArea" type="Area2D" parent="." groups=["CashRegister"]]
+
+[node name="OrderHitBox" type="CollisionShape2D" parent="OrderArea"]
+position = Vector2(18, 0)
+shape = SubResource("CircleShape2D_1s3ug")
+
+[node name="TakeOrderSpot" type="Marker2D" parent="OrderArea"]
+position = Vector2(42, 0)
+
+[node name="CustomerArea" type="Area2D" parent="." groups=["CashRegister"]]
+collision_mask = 2
+
+[node name="CustomerOrderHitBox" type="CollisionShape2D" parent="CustomerArea"]
+position = Vector2(-18, 0)
+shape = SubResource("CircleShape2D_q5pmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_gjbes")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = -62.0
+offset_right = 67.0
+offset_bottom = -39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 13
+text = "Press Z to take order"
+
+[connection signal="body_entered" from="OrderArea" to="." method="_on_order_area_body_entered"]
+[connection signal="body_exited" from="OrderArea" to="." method="_on_order_area_body_exited"]
+[connection signal="body_entered" from="CustomerArea" to="." method="_on_customer_area_body_entered"]
+[connection signal="body_exited" from="CustomerArea" to="." method="_on_customer_area_body_exited"]

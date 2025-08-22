@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo1hv4nuatb7i"]
+
+[ext_resource type="PackedScene" uid="uid://55s6plo3tcxn" path="res://interactable_object.tscn" id="1_6dixx"]
+[ext_resource type="Script" uid="uid://cgdm5clqx8qhy" path="res://Scripts/pizza_minigame_start.gd" id="2_1k05g"]
+[ext_resource type="Texture2D" uid="uid://blrhv3s85rau3" path="res://sprites/Pizzas/Placeholders/Container_Placeholder.png" id="2_etxfn"]
+
+[node name="pizza_minigame_start" instance=ExtResource("1_6dixx")]
+script = ExtResource("2_1k05g")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_etxfn")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://75svf2atdsaa"]
+
+[ext_resource type="Script" uid="uid://dq74u2je1mjrp" path="res://Scripts/main_character.gd" id="1_wmkwl"]
+[ext_resource type="Texture2D" uid="uid://mb2bwqtsv6fk" path="res://sprites/spr_MC/c0847815-0372-40ec-bf36-a0fe86c15e13.png" id="2_78e7u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmkwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxrig"]
+radius = 9.48683
+
+[node name="MainCharacter" type="CharacterBody2D" groups=["MainCharacter"]]
+script = ExtResource("1_wmkwl")
+
+[node name="InteractionDetection" type="Area2D" parent="."]
+
+[node name="IntercationCollision" type="CollisionShape2D" parent="InteractionDetection"]
+shape = SubResource("CircleShape2D_wmkwl")
+
+[node name="PhysicalDetection" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pxrig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_78e7u")
+
+[node name="Happiness_Decrease_Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="PizzaCarry" type="Marker2D" parent="."]
+position = Vector2(8, 0)
+
+[connection signal="timeout" from="Happiness_Decrease_Timer" to="." method="_on_happiness_decrease_timer_timeout"]
