@@ -1,12 +1,71 @@
-[gd_scene load_steps=5 format=3 uid="uid://75svf2atdsaa"]
+[gd_scene load_steps=15 format=3 uid="uid://75svf2atdsaa"]
 
 [ext_resource type="Script" uid="uid://dq74u2je1mjrp" path="res://Scripts/main_character.gd" id="1_wmkwl"]
-[ext_resource type="Texture2D" uid="uid://mb2bwqtsv6fk" path="res://sprites/spr_MC/c0847815-0372-40ec-bf36-a0fe86c15e13.png" id="2_78e7u"]
+[ext_resource type="Texture2D" uid="uid://qxbpkrqvbbx4" path="res://sprites/spr_MC_walking_animation/bcabab40-406d-4f1f-ad10-163e2ef2a262.png" id="2_5q0wt"]
+[ext_resource type="Texture2D" uid="uid://bgm81nhww36cj" path="res://sprites/spr_MC_walking_animation/2f4870fd-e389-4f2b-aa76-46d1b61dfbcc.png" id="3_qthh5"]
+[ext_resource type="Texture2D" uid="uid://cjyjd6wvgm4e4" path="res://sprites/spr_MC_walking_animation/3a03618a-b268-43a9-8d8b-0cd0d575fb2a.png" id="4_1vudk"]
+[ext_resource type="Texture2D" uid="uid://cgji8sh2wb81g" path="res://sprites/spr_MC_walking_animation/9d5851ac-9222-4edc-957e-4ba981a51534.png" id="5_k7f46"]
+[ext_resource type="Texture2D" uid="uid://d0seyuprt3mqk" path="res://sprites/spr_MC_walking_animation/0177f72a-9022-4a3b-8f5f-b7f2e0b749da.png" id="6_47qjj"]
+[ext_resource type="Texture2D" uid="uid://bk3h0bhwh5q5d" path="res://sprites/spr_MC_walking_animation/c0847815-0372-40ec-bf36-a0fe86c15e13.png" id="6_qthh5"]
+[ext_resource type="Texture2D" uid="uid://1gc5csjiaos0" path="res://sprites/spr_MC_walking_animation/34404717-ce88-4443-aaba-ae40ab11ec7c.png" id="7_dypn8"]
+[ext_resource type="Texture2D" uid="uid://ckxwwgs2katie" path="res://sprites/spr_MC_walking_animation/a288459c-44b7-4726-a3e2-deab614f566d.png" id="8_07ek2"]
+[ext_resource type="Texture2D" uid="uid://b61c5clgnjdr0" path="res://sprites/spr_MC_walking_animation/adcba270-f906-42a7-8f67-61edb5106110.png" id="9_kg3iu"]
+[ext_resource type="Texture2D" uid="uid://c18klrsgs1ucc" path="res://sprites/spr_MC_walking_animation/fa028c67-f75d-423d-ac78-85489c5b756d.png" id="10_mjyag"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wmkwl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pxrig"]
-radius = 9.48683
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtyc1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Carrying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5q0wt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5q0wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1vudk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qthh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kg3iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qthh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_47qjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_07ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mjyag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k7f46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dypn8")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
 
 [node name="MainCharacter" type="CharacterBody2D" groups=["MainCharacter"]]
 script = ExtResource("1_wmkwl")
@@ -20,10 +79,10 @@ shape = SubResource("CircleShape2D_wmkwl")
 shape = SubResource("CircleShape2D_pxrig")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_78e7u")
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_wtyc1")
+animation = &"idle"
 
 [node name="Happiness_Decrease_Timer" type="Timer" parent="."]
 autostart = true
