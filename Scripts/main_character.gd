@@ -25,9 +25,11 @@ func move() -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if (!take_order and !is_making_pizza):
 		if direction:
+			$AnimatedSprite2D.play("walking")
 			velocity.x = direction * SPEED
-			$Sprite2D.flip_h = direction < 0  # Flip when moving left
+			$AnimatedSprite2D.flip_h = direction < 0  # Flip when moving left
 		else:
+			$AnimatedSprite2D.play("idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_and_slide()
 
