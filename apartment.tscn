@@ -1,0 +1,212 @@
+[gd_scene load_steps=23 format=3 uid="uid://q15q5p51ra3b"]
+
+[ext_resource type="Texture2D" uid="uid://dbvcnmyv23v0v" path="res://sprites/spr_apartment_wall/1cc68b2c-1249-4090-8e56-96f3509640d1.png" id="1_yukv5"]
+[ext_resource type="Texture2D" uid="uid://j7sdohjej3gx" path="res://sprites/spr_apartment_bed/a554469a-1279-4c79-9f16-6bd4bd49b3bc.png" id="2_hq0fg"]
+[ext_resource type="Texture2D" uid="uid://b5qws62cs0nkl" path="res://sprites/spr_apartment_wardrobe/206c5856-7be4-49fe-8b3f-f98aca64552d.png" id="3_f0l3q"]
+[ext_resource type="Texture2D" uid="uid://cdykv22hbbt8d" path="res://sprites/spr_apartment_fridge/5adb6c8c-a1d1-4424-8b8f-d1c71a83ce72.png" id="3_irbrm"]
+[ext_resource type="Texture2D" uid="uid://b64upupxoeh1e" path="res://sprites/spr_apartment_desk/7696723f-87a4-49b9-96d7-ccd8b90ddd91.png" id="4_ix0ng"]
+[ext_resource type="Texture2D" uid="uid://dc6w78oldlfjk" path="res://sprites/spr_apartment_upper_cupboards/21302596-ae11-4bdf-b84c-a6dbf734e4fc.png" id="4_m1kd6"]
+[ext_resource type="Texture2D" uid="uid://7lepu0fwcp4k" path="res://sprites/spr_apartment_stool/850e4dec-229d-4d3b-a51c-8163b831e6ae.png" id="5_7vo6c"]
+[ext_resource type="PackedScene" uid="uid://75svf2atdsaa" path="res://main_character.tscn" id="5_i41os"]
+[ext_resource type="Texture2D" uid="uid://csrblodit2t63" path="res://sprites/spr_apartment_door_front/6a5056bc-6053-48e5-9303-2677e0e82e9e.png" id="6_aepbv"]
+[ext_resource type="Texture2D" uid="uid://hwwrg5e3jqwd" path="res://sprites/spr_door_side/7fd79cd9-5210-40e8-8029-56506acb05a3.png" id="7_4sf33"]
+[ext_resource type="Texture2D" uid="uid://bapjqae0r125h" path="res://sprites/spr_window/0630243e-36b6-4688-b4f9-8cd497c1449b.png" id="8_i3c7s"]
+[ext_resource type="Texture2D" uid="uid://b67eienub44j6" path="res://sprites/spr_apartment_lamp/80a0cfed-8588-4d10-b95c-5c2a541ab512.png" id="10_epkd1"]
+[ext_resource type="Texture2D" uid="uid://db3djshl5hu7d" path="res://sprites/spr_apartment_microwave/142a654a-7474-4953-8170-edfc1dfb5323.png" id="11_1li5e"]
+[ext_resource type="Texture2D" uid="uid://bc6oywtb578td" path="res://sprites/spr_apartment_sink/84f6d7f8-1f4a-4f50-aa80-78409b5f0614.png" id="12_7usep"]
+[ext_resource type="Texture2D" uid="uid://dqbmxyd7vkxat" path="res://sprites/spr_apartment_knives/80f50a37-02a4-4c16-88d8-5fcb94a3537d.png" id="13_tftde"]
+[ext_resource type="Texture2D" uid="uid://dq3meggrr2h1m" path="res://sprites/spr_apartment_switch/spr_apartment_switch.png" id="14_hkcmm"]
+[ext_resource type="Texture2D" uid="uid://b48kqg7dab50g" path="res://sprites/spr_apartment_kitchen_lamp/493eb0bb-f3fb-4130-aece-34f1466e4ceb.png" id="16_yh0d6"]
+[ext_resource type="Texture2D" uid="uid://1il8ejfxu4ta" path="res://sprites/spr_apartment_lower_cupboards/0620fc7a-08a5-4511-909a-45105638b60d.png" id="17_084ft"]
+[ext_resource type="Texture2D" uid="uid://djujd1se7is3m" path="res://sprites/spr_texture_light_kitchen/kitcehn_light.png" id="17_ix0ng"]
+
+[sub_resource type="Gradient" id="Gradient_f0l3q"]
+offsets = PackedFloat32Array(0, 0.1, 1)
+colors = PackedColorArray(0.888889, 0.888889, 0.888889, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ix0ng"]
+gradient = SubResource("Gradient_f0l3q")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f0l3q"]
+
+[node name="Apartment" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Wall" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(557, 329)
+scale = Vector2(63.7812, 6)
+texture = ExtResource("1_yukv5")
+
+[node name="Bed" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(176.5, 446)
+scale = Vector2(6, 6)
+texture = ExtResource("2_hq0fg")
+
+[node name="Wardrobe" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(322.5, 398)
+scale = Vector2(6, 6)
+texture = ExtResource("3_f0l3q")
+
+[node name="Desk" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(420.5, 444)
+scale = Vector2(6, 6)
+texture = ExtResource("4_ix0ng")
+
+[node name="Stool" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(420.5, 469)
+scale = Vector2(6, 6)
+texture = ExtResource("5_7vo6c")
+
+[node name="Bathroom_door" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(936.5, 398)
+scale = Vector2(6, 6)
+texture = ExtResource("6_aepbv")
+
+[node name="Main_door" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1072.5, 398)
+scale = Vector2(6, 6)
+texture = ExtResource("7_4sf33")
+
+[node name="Window" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(176.5, 350)
+scale = Vector2(6, 6)
+texture = ExtResource("8_i3c7s")
+
+[node name="Fridge" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(516.5, 399.184)
+scale = Vector2(6, 5.864)
+texture = ExtResource("3_irbrm")
+
+[node name="Lamp" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(516.5, 204.184)
+scale = Vector2(6, 6)
+texture = ExtResource("10_epkd1")
+
+[node name="Microwave" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(607.5, 372)
+scale = Vector2(6, 5.864)
+texture = ExtResource("11_1li5e")
+
+[node name="Sink" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(688.5, 373)
+scale = Vector2(6, 5.864)
+texture = ExtResource("12_7usep")
+
+[node name="Knives" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(731.5, 373)
+scale = Vector2(6, 5.864)
+texture = ExtResource("13_tftde")
+
+[node name="Switch_1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(839.5, 379)
+scale = Vector2(6, 5.864)
+texture = ExtResource("14_hkcmm")
+
+[node name="Switch_2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1004.5, 379)
+scale = Vector2(6, 5.864)
+texture = ExtResource("14_hkcmm")
+
+[node name="Upper_cupboards" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(710, 260)
+scale = Vector2(6, 6)
+texture = ExtResource("4_m1kd6")
+
+[node name="Kitchen_lamp_1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(613.5, 311)
+scale = Vector2(6, 6)
+texture = ExtResource("16_yh0d6")
+
+[node name="PointLight2D" type="PointLight2D" parent="Kitchen_lamp_1"]
+position = Vector2(0.0833342, 7.08333)
+scale = Vector2(1.39583, 0.885417)
+texture = ExtResource("17_ix0ng")
+
+[node name="Kitchen_lamp_2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(709.5, 311)
+scale = Vector2(6, 6)
+texture = ExtResource("16_yh0d6")
+
+[node name="PointLight2D" type="PointLight2D" parent="Kitchen_lamp_2"]
+position = Vector2(0.0833342, 7.08333)
+scale = Vector2(1.39583, 0.885417)
+texture = ExtResource("17_ix0ng")
+
+[node name="Kitchen_lamp_3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(805.5, 311)
+scale = Vector2(6, 6)
+texture = ExtResource("16_yh0d6")
+
+[node name="PointLight2D" type="PointLight2D" parent="Kitchen_lamp_3"]
+position = Vector2(0.0833342, 7.08333)
+scale = Vector2(1.39583, 0.885417)
+texture = ExtResource("17_ix0ng")
+
+[node name="Lower_cupboards" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(710.5, 444)
+scale = Vector2(6, 6)
+texture = ExtResource("17_084ft")
+
+[node name="MainCharacter" parent="." instance=ExtResource("5_i41os")]
+position = Vector2(418, 406)
+scale = Vector2(6, 6)
+
+[node name="PointLight2D" type="PointLight2D" parent="MainCharacter"]
+position = Vector2(0.174849, -1.04407)
+rotation = -3.14159
+scale = Vector2(3.01703, -3.84379)
+texture = SubResource("GradientTexture2D_ix0ng")
+texture_scale = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Left_Wall" type="StaticBody2D" parent="."]
+position = Vector2(13, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Wall"]
+position = Vector2(26, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_f0l3q")
+
+[node name="Right_Wall" type="StaticBody2D" parent="."]
+position = Vector2(1121, 0)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Wall"]
+position = Vector2(26, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_f0l3q")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.226417, 0.128043, 0.0545703, 1)

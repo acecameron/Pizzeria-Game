@@ -41,6 +41,15 @@ func start_dialogue(group: String, speaker: String):
 	else:
 		push_error("No dialogue found for " + group + " -> " + speaker)
 
+func start_dialogue_index(group: String, speaker: String, index: String):
+	if dialogues.has(group) and dialogues[group].has(speaker):
+		current_group = group
+		current_speaker = speaker
+		current_index = 0
+		show_text()
+		show()
+	else:
+		push_error("No dialogue found for " + group + " -> " + speaker)
 
 func show_text():
 	var lines = dialogues[current_group][current_speaker]

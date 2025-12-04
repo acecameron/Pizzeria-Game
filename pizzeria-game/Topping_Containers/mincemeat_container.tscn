@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3s3rmn8tt7xq"]
-
-[ext_resource type="PackedScene" uid="uid://dsr82ux51y46k" path="res://Topping_Containers/toping_container.tscn" id="1_25iix"]
-[ext_resource type="Script" uid="uid://cauvsjuckdwfx" path="res://Scripts/mincemeat_container.gd" id="2_25iix"]
-
-[node name="mincemeat_container" instance=ExtResource("1_25iix")]
-script = ExtResource("2_25iix")

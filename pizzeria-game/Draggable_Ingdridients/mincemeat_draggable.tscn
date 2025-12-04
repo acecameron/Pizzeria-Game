@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://do06r0rkc8h51"]
-
-[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_7jskv"]
-[ext_resource type="Script" uid="uid://wf12y7txwpre" path="res://Scripts/mincemeat_draggable.gd" id="2_7jskv"]
-
-[node name="mincemeat_draggable" groups=["Mincemeat", "Toppings"] instance=ExtResource("1_7jskv")]
-script = ExtResource("2_7jskv")

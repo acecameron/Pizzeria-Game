@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba7quauhhvmu8"]
-
-[ext_resource type="PackedScene" uid="uid://dsr82ux51y46k" path="res://Topping_Containers/toping_container.tscn" id="1_bil41"]
-[ext_resource type="Script" uid="uid://fj70tduithi7" path="res://Scripts/pepperoni_container.gd" id="2_bil41"]
-
-[node name="pepperoni_container" instance=ExtResource("1_bil41")]
-script = ExtResource("2_bil41")

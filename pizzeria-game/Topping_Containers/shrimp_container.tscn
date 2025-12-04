@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2d6eo6ug2r07"]
-
-[ext_resource type="PackedScene" uid="uid://dsr82ux51y46k" path="res://Topping_Containers/toping_container.tscn" id="1_b2s40"]
-[ext_resource type="Script" uid="uid://dovpifpp73wi5" path="res://Scripts/shrimp_container.gd" id="2_b2s40"]
-
-[node name="shrimp_container" instance=ExtResource("1_b2s40")]
-script = ExtResource("2_b2s40")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://djcppwx38scxo"]
+
+[ext_resource type="PackedScene" uid="uid://senmby6vol24" path="res://interactable_object_visible.tscn" id="1_xuw1u"]
+[ext_resource type="Script" uid="uid://b0ts6bm2ddh28" path="res://Scripts/dialogue_object_visible.gd" id="2_ucwme"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucwme"]
+
+[node name="dialogue_object_visible" instance=ExtResource("1_xuw1u")]
+script = ExtResource("2_ucwme")
+
+[node name="dialogue_area" type="Area2D" parent="." index="3"]
+
+[node name="dialogue_hitbox" type="CollisionShape2D" parent="dialogue_area" index="0"]
+shape = SubResource("CircleShape2D_ucwme")

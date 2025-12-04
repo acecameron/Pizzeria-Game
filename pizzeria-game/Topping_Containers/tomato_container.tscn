@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://nxycwusow5pi"]
-
-[ext_resource type="PackedScene" uid="uid://dsr82ux51y46k" path="res://Topping_Containers/toping_container.tscn" id="1_riw04"]
-[ext_resource type="Script" uid="uid://c7ci5lf3pkw75" path="res://Scripts/tomato_container.gd" id="2_riw04"]
-
-[node name="tomato_container" instance=ExtResource("1_riw04")]
-script = ExtResource("2_riw04")

@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgc56xfqr0yao"]
+[gd_scene load_steps=3 format=3 uid="uid://cgc56xfqr0yao"]
+
+[ext_resource type="Script" uid="uid://ct16tibmigp4o" path="res://dialogue_area.gd" id="1_awspb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqeaa"]
 
 [node name="Dialogue_Area" type="Node2D"]
+script = ExtResource("1_awspb")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_lqeaa")

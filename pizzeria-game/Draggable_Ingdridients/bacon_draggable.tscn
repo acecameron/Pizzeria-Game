@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dea7nkcyfasr6"]
-
-[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_53oiv"]
-[ext_resource type="Script" uid="uid://drou82i443nsw" path="res://Scripts/bacon_draggable.gd" id="2_53oiv"]
-
-[node name="bacon_draggable" groups=["Bacon", "Toppings"] instance=ExtResource("1_53oiv")]
-script = ExtResource("2_53oiv")

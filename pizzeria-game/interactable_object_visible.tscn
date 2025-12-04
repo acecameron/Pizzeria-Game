@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://senmby6vol24"]
-
-[ext_resource type="PackedScene" uid="uid://55s6plo3tcxn" path="res://interactable_object.tscn" id="1_ed04u"]
-
-[node name="interactable_object_visible" instance=ExtResource("1_ed04u")]
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="2"]

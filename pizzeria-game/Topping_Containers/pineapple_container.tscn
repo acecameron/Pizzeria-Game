@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdmv2y8brm10j"]
-
-[ext_resource type="PackedScene" uid="uid://dsr82ux51y46k" path="res://Topping_Containers/toping_container.tscn" id="1_jphye"]
-[ext_resource type="Script" uid="uid://cnr04682ea7up" path="res://Scripts/pineapple_container.gd" id="2_jphye"]
-
-[node name="pineapple_container" instance=ExtResource("1_jphye")]
-script = ExtResource("2_jphye")

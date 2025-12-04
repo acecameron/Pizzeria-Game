@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2nxy2b5q3e3w"]
+[gd_scene load_steps=6 format=3 uid="uid://c2nxy2b5q3e3w"]
 
 [ext_resource type="Script" uid="uid://dc25mwwdt7l6m" path="res://Scripts/draggable_object.gd" id="1_88eo7"]
 [ext_resource type="Texture2D" uid="uid://dluvl5385pqk" path="res://sprites/spr_flour_bag/ad64ee19-6684-4939-aa7c-e72c32022278.png" id="2_2ocf8"]
+[ext_resource type="Shader" uid="uid://d4lyalsrm3ieo" path="res://Shaders/outline_interactable.gdshader" id="2_m24kv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d30c8"]
 radius = 7.07107
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el065"]
+shader = ExtResource("2_m24kv")
+shader_parameter/show_outline = false
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 1.0
+shader_parameter/alpha_threshold = 0.0
+shader_parameter/outline_samples = 4
+shader_parameter/shade_color = Color(1, 1, 1, 0.5)
 
 [node name="DraggableObject" type="Area2D"]
 script = ExtResource("1_88eo7")
@@ -13,4 +23,6 @@ script = ExtResource("1_88eo7")
 shape = SubResource("CircleShape2D_d30c8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_el065")
 texture = ExtResource("2_2ocf8")

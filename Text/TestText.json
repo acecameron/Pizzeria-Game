@@ -8,5 +8,18 @@
 		"Name2:":[
 			"This is name 2, testing the dialogue"
 		]
+	},
+	
+	"TestObject": {
+		"1": {
+			"MC": [
+			" What an interesting object!"
+			]
+		},
+		"2": {
+			"MC": [
+			" And yet, the interesting object remains!"
+			]
+		}
 	}
 }

@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm2mh8jr4udc0"]
-
-[ext_resource type="PackedScene" uid="uid://c2nxy2b5q3e3w" path="res://draggable_object.tscn" id="1_pvdox"]
-[ext_resource type="Script" uid="uid://c1po2q657v4d3" path="res://Scripts/tomato_draggable.gd" id="2_pvdox"]
-
-[node name="tomato_draggable" groups=["Tomato", "Toppings"] instance=ExtResource("1_pvdox")]
-script = ExtResource("2_pvdox")
